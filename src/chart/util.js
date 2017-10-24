@@ -117,3 +117,23 @@ if (!window.cancelAnimationFrame) {
     window.oCancelAnimationFrame || window.oCancelRequestAnimationFrame ||
     window.clearTimeout);
 }
+
+// 检测碰撞
+export function boundingBoxCollide(object1, object2) {
+  let left1 = object1.x
+  let left2 = object2.x
+  let right1 = object1.x + object.width
+  let right2 = object2.x + object.width
+
+  let top1 = object1.y
+  let top2 = object2.y
+  let bottom1 = object1.y + object1.height
+  let bottom2 = object2.y + object2.height
+
+  if(bottom1 < top2) return false
+  if(top1 > bottom2) return false
+  if(right1 < left2) return false
+  if(left1 > right2) return false
+  return true
+
+}

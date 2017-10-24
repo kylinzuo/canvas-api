@@ -1,17 +1,18 @@
 <template>
-  <div class="level"></div>
+  <div class="level" id='chartContainer'></div>
 </template>
 
 <script>
+import renderChart from '../../chart/renderChart6'
 export default {
-  name: 'hello',
+  name: 'level6',
   data () {
     return {
       title: 'level'
     }
   },
   mounted () {
-
+    renderChart('chartContainer')
   }
 }
 </script>
@@ -21,5 +22,6 @@ export default {
   border: 1px solid #333;
   flex-grow: 1;
   margin: 30px;
+  overflow: hidden;
 }
 </style>
